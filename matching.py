@@ -149,7 +149,8 @@ def merge_lists_to_dictionary(list1, list2):
 # >>> original_list
 # [1, 2, 3, 4, 5]
 def shuffled_copy(items):
-    return random.sample(items, len(items))
+    copy_list = items.copy()
+    return random.shuffle(copy_list)
 
 
 # This function represents the way Santees are assigned to the Santas.
@@ -159,7 +160,8 @@ def shuffled_copy(items):
 #
 # To implement this function, you should call a previously implemented function!
 def name_bag(names):
-    pass
+    # not sure if this is correct
+    return random.choice(names)
 
 # Given a list of the names of all participants, create a random Santa
 # assignment. Make sure no-one gets assigned to give a present to themselves!
