@@ -160,8 +160,7 @@ def shuffled_copy(items):
 #
 # To implement this function, you should call a previously implemented function!
 def name_bag(names):
-    # not sure if this is correct
-    return random.choice(names)
+    return shuffled_copy(names)
 
 # Given a list of the names of all participants, create a random Santa
 # assignment. Make sure no-one gets assigned to give a present to themselves!
@@ -177,4 +176,6 @@ def name_bag(names):
 # >>> build_santa_assignment(names)
 # {'Anita': 'Ben', 'Ben': 'Daan', 'Cecilia': 'Anita', 'Daan': 'Cecilia'}
 def build_santa_assignment(names):
-    pass
+    names_out_of_a_bag = name_bag(names) # names out of a bag in random order
+    fix_so_nobody_gets_their_own_name(names, names_out_of_a_bag)
+    return merge_lists_to_dictionary(names, names_out_of_a_bag)
